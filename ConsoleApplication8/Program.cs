@@ -112,6 +112,7 @@ class Program
         m.JakaMarka();
         m.Marki();
         Console.ReadLine();
+        Console.ReadKey();
     }
 }
 
