@@ -141,7 +141,7 @@ class Program : Marka
         foreach (string n in Names) ;
         foreach (int v in Values)
         {
-            Console.WriteLine("{0} - {1}", v, n);
+            Console.WriteLine("{0} - {1}", v, );
         }
         //m.Marki();
         string ChosenBrand = Console.ReadLine();
