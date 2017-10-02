@@ -13,7 +13,29 @@ public abstract class Auto
     protected int _cena = 10000;
 
     public string Markaa { set; get; }
+    public enum Marki
+    {
+        Audi,
+        Citroen,
+        Dacia,
+        Daewoo,
+        Dodge,
+        Fiat,
+        Ford,
+        Honda,
+        Hyundai,
+        Jeep,
+        Kia,
+        Mazda,
+        Mercedes,
+        Mitsubishi,
+        Nissan,
+        Opel,
+        Peugeot,
+        Renault
+    }
     public string Lakier { set; get; }
+
     public int Rocznik
     {
         set
@@ -56,7 +78,7 @@ public abstract class Auto
     public int Cena { get; set; }
 
 }
-class Marka : Auto
+public class Marka : Auto
 {
     public Marka()
     {
@@ -66,59 +88,7 @@ class Marka : Auto
         Markaa = M;
     }
 
-    public enum Marki
-    {
-        Audi,
-        Citroen,
-        Dacia,
-        Daewoo,
-        Dodge,
-        Fiat,
-        Ford,
-        Honda,
-        Hyundai,
-        Jeep,
-        Kia,
-        Mazda,
-        Mercedes,
-        Mitsubishi,
-        Nissan,
-        Opel,
-        Peugeot,
-        Renault
-    }
 
-
-
-    //public void Marki()
-    //{
-    //    Marka[] marki = new Marka[18];
-    //    marki[0] = new Marka("Audi");
-    //    marki[1] = new Marka("Citroen");
-    //    marki[2] = new Marka("Dacia");
-    //    marki[3] = new Marka("Daewoo");
-    //    marki[4] = new Marka("Dodge");
-    //    marki[5] = new Marka("Fiat");
-    //    marki[6] = new Marka("Ford");
-    //    marki[7] = new Marka("Honda");
-    //    marki[8] = new Marka("Hyundai");
-    //    marki[9] = new Marka("Jeep");
-    //    marki[10] = new Marka("Kia");
-    //    marki[11] = new Marka("Mazda");
-    //    marki[12] = new Marka("Mercedes-Benz");
-    //    marki[13] = new Marka("Mitsubishi");
-    //    marki[14] = new Marka("Nissan");
-    //    marki[15] = new Marka("Opel");
-    //    marki[16] = new Marka("Peugeot");
-    //    marki[17] = new Marka("Renault");
-
-    //    foreach (Marka m in marki)
-    //    {
-    //        Console.WriteLine("{0}", m.Markaa);
-    //    }
-    //}
-  
-    
     public void JakaMarka()
     {
         Console.WriteLine("Wybierz markę samochodu wpisując przypisaną jej liczbę.");
@@ -126,28 +96,30 @@ class Marka : Auto
     }
 }
 
-class Lakier
+class Lakier : Auto
 {
-
+    public void Paint()
+    {
+        Console.WriteLine("Jaki kolor lakieru?");
+        string Paintcolour = Console.ReadLine();
+    }
 }
-class Program : Marka
+class Program : Auto
 {
     public static void Main()
     {
         Marka m = new Marka();
         m.JakaMarka();
+
         string[] Names = Enum.GetNames(typeof(Marki));
         int[] Values = (int[])Enum.GetValues(typeof(Marki));
-        foreach (string n in Names) ;
-        foreach (int v in Values)
+
+        for (int v = 0; v < Names.Length; v++)
         {
-            Console.WriteLine("{0} - {1}", v, );
+            Console.WriteLine("{0} - {1}", Values[v], Names[v]);
         }
-        //m.Marki();
         string ChosenBrand = Console.ReadLine();
         Console.ReadKey();
-
-        
     }
 }
 
