@@ -65,33 +65,56 @@ class Marka : Auto
     {
         Markaa = M;
     }
-    public void Marki()
-    {
-        Marka[] marki = new Marka[18];
-        marki[0] = new Marka("Audi");
-        marki[1] = new Marka("Citroen");
-        marki[2] = new Marka("Dacia");
-        marki[3] = new Marka("Daewoo");
-        marki[4] = new Marka("Dodge");
-        marki[5] = new Marka("Fiat");
-        marki[6] = new Marka("Ford");
-        marki[7] = new Marka("Honda");
-        marki[8] = new Marka("Hyundai");
-        marki[9] = new Marka("Jeep");
-        marki[10] = new Marka("Kia");
-        marki[11] = new Marka("Mazda");
-        marki[12] = new Marka("Mercedes-Benz");
-        marki[13] = new Marka("Mitsubishi");
-        marki[14] = new Marka("Nissan");
-        marki[15] = new Marka("Opel");
-        marki[16] = new Marka("Peugeot");
-        marki[17] = new Marka("Renault");
 
-        foreach (Marka m in marki)
-        {
-            Console.WriteLine("{0}", m.Markaa);
-        }
+    public enum Marki
+    {
+        Audi,
+        Citroen,
+        Dacia,
+        Daewoo,
+        Dodge,
+        Fiat,
+        Ford,
+        Honda,
+        Hyundai,
+        Jeep,
+        Kia,
+        Mazda,
+        MercedesBenz,
+        Mitsubishi,
+        Nissan,
+        Opel,
+        Peugeot,
+        Renault
     }
+
+    //public void Marki()
+    //{
+    //    Marka[] marki = new Marka[18];
+    //    marki[0] = new Marka("Audi");
+    //    marki[1] = new Marka("Citroen");
+    //    marki[2] = new Marka("Dacia");
+    //    marki[3] = new Marka("Daewoo");
+    //    marki[4] = new Marka("Dodge");
+    //    marki[5] = new Marka("Fiat");
+    //    marki[6] = new Marka("Ford");
+    //    marki[7] = new Marka("Honda");
+    //    marki[8] = new Marka("Hyundai");
+    //    marki[9] = new Marka("Jeep");
+    //    marki[10] = new Marka("Kia");
+    //    marki[11] = new Marka("Mazda");
+    //    marki[12] = new Marka("Mercedes-Benz");
+    //    marki[13] = new Marka("Mitsubishi");
+    //    marki[14] = new Marka("Nissan");
+    //    marki[15] = new Marka("Opel");
+    //    marki[16] = new Marka("Peugeot");
+    //    marki[17] = new Marka("Renault");
+
+    //    foreach (Marka m in marki)
+    //    {
+    //        Console.WriteLine("{0}", m.Markaa);
+    //    }
+    //}
 
     public void JakaMarka()
     {
