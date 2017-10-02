@@ -11,7 +11,7 @@ public abstract class Auto
     private bool _radio;
     private bool _centralnyzamek;
     protected int _cena = 10000;
-    
+
     public string Markaa { set; get; }
     public string Lakier { set; get; }
     public int Rocznik
@@ -40,7 +40,7 @@ public abstract class Auto
             {
                 Console.WriteLine("Przebieg samochodu nie może być mniejszy bądź równy 0.");
             }
-            
+
         }
         get
         {
@@ -80,13 +80,15 @@ class Marka : Auto
         Jeep,
         Kia,
         Mazda,
-        MercedesBenz,
+        Mercedes,
         Mitsubishi,
         Nissan,
         Opel,
         Peugeot,
         Renault
     }
+
+
 
     //public void Marki()
     //{
@@ -115,10 +117,11 @@ class Marka : Auto
     //        Console.WriteLine("{0}", m.Markaa);
     //    }
     //}
-
+  
+    
     public void JakaMarka()
     {
-        Console.WriteLine("Wybierz markę samochodu.");
+        Console.WriteLine("Wybierz markę samochodu wpisując przypisaną jej liczbę.");
 
     }
 }
@@ -127,15 +130,24 @@ class Lakier
 {
 
 }
-class Program
+class Program : Marka
 {
     public static void Main()
     {
         Marka m = new Marka();
         m.JakaMarka();
-        m.Marki();
-        Console.ReadLine();
+        string[] Names = Enum.GetNames(typeof(Marki));
+        int[] Values = (int[])Enum.GetValues(typeof(Marki));
+        foreach (string n in Names) ;
+        foreach (int v in Values)
+        {
+            Console.WriteLine("{0} - {1}", v, n);
+        }
+        //m.Marki();
+        string ChosenBrand = Console.ReadLine();
         Console.ReadKey();
+
+        
     }
 }
 
