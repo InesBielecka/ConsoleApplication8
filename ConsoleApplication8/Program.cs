@@ -74,9 +74,10 @@ class Program : Auto
 {
     public static void Main()
     {
+        bool flag = true;
+
         Auto m = new Auto();
         m.JakaMarka();
-
         string[] Names = Enum.GetNames(typeof(Marki));
         int[] Values = (int[])Enum.GetValues(typeof(Marki));
 
@@ -84,16 +85,24 @@ class Program : Auto
         {
             Console.WriteLine("{0} - {1}", Values[v], Names[v]);
         }
-        string ChosenBrand = Console.ReadLine();
-        int b = 0;
-
-
-        if (!int.TryParse(ChosenBrand, out b))
+        do
         {
-            Console.WriteLine("Wpisz poprawny numer.");
-        }
+            string ChosenBrand = Console.ReadLine();
 
- 
+            int brandIndex = 0;
+
+            if (int.TryParse(ChosenBrand, out brandIndex) && brandIndex >= 0 && brandIndex <= Values.Length)
+            {
+                flag = false;
+            }
+            else
+            {
+                Console.WriteLine("Wpisz poprawny numer.");
+            }
+            
+        }
+        while (flag);
+
         //else 
         //{
         //    Console.WriteLine("Wpisz poprawny numer.");
@@ -122,7 +131,7 @@ class Program : Auto
 
         Auto y = new Auto();
         y.AskForYearOfCarProducion();
-        bool flag = true;
+       
         do
         {
             
