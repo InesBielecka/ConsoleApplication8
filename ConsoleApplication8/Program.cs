@@ -101,9 +101,18 @@ class Lakier : Auto
     public void Paint()
     {
         Console.WriteLine("Jaki kolor lakieru?");
-        string Paintcolour = Console.ReadLine();
+        
     }
 }
+
+class Rocznik : Auto
+{
+    public void Year()
+    {
+        Console.WriteLine("Jaki jest rocznik samochodu? (yyyy)");
+    }
+}
+
 class Program : Auto
 {
     public static void Main()
@@ -119,7 +128,25 @@ class Program : Auto
             Console.WriteLine("{0} - {1}", Values[v], Names[v]);
         }
         string ChosenBrand = Console.ReadLine();
-        Console.ReadKey();
+
+        Lakier p = new Lakier();
+        p.Paint();
+        string Paintcolour = Console.ReadLine();
+
+        Rocznik y = new Rocznik();
+        y.Year();
+        string YearofProduction = Console.ReadLine();
+        int i = 0;
+        bool ifyearis = int.TryParse(YearofProduction, out i);
+        if (ifyearis)
+        {
+            Console.WriteLine(i);
+                }
+        else
+        {
+            Console.WriteLine("Wpisz poprawny rocznik. (yyyy)");
+        }
+   
     }
 }
 
