@@ -35,6 +35,10 @@ class Program
             }
         }
         while (flag);
+        for (int v = 0; v < Names.Length; v++)
+        {
+            auto.Marka = Names[v];
+        }
 
         auto.Paint();
         string Paintcolour = Console.ReadLine();
@@ -107,13 +111,8 @@ class Program
         auto.AskForCentralLock();
         auto.Zamek = auto.ChecForAddons();
 
-        Console.WriteLine(@"Auto marki {0} w kolorze {1} wyprodukowany w roku {2}, 
-            z przebiegiem {3}, o pojemności silnika {4}. \nKlimatyzacja {5} \nElektryczne okna 
-{6} \nRadio {7} \nCentraly zamek {8}", auto.Marka, auto.Lakier, auto.Rocznik, auto.Przebieg, auto.Silnik, auto.Klima, auto.Szyby, auto.Radio, auto.Zamek);
+        Console.WriteLine("Auto marki {0}, kolor lakieru {1}, samochód wyprodukowany w roku {2}, \nz przebiegiem {3}km, o pojemności silnika {4}. \n\nKlimatyzacja {5} \nElektryczne okna {6} \nRadio {7} \nCentraly zamek {8}", auto.Marka, auto.Lakier, auto.Rocznik, auto.Przebieg, auto.Silnik, auto.Klima ? "Tak" : "Nie", auto.Szyby ? "Tak" : "Nie", auto.Radio ? "Tak" : "Nie", auto.Zamek ? "Tak" : "Nie");
         Console.ReadKey();
     }
-
-
 }
-
 

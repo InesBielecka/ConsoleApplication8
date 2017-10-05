@@ -111,9 +111,7 @@ namespace ConsoleApplication8
                         break;
                 }
             } while (flag);
-
             return result;
-
         }
     }
 }
