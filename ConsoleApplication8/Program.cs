@@ -28,6 +28,7 @@ class Program
             {
                 auto.Marka = ChosenBrand;
                 flag = false;
+                auto.Marka = Names[brandIndex];
             }
             else
             {
@@ -35,10 +36,9 @@ class Program
             }
         }
         while (flag);
-        for (int v = 0; v < Names.Length; v++)
-        {
-            auto.Marka = Names[v];
-        }
+       
+            
+       
 
         auto.Paint();
         string Paintcolour = Console.ReadLine();
@@ -51,7 +51,7 @@ class Program
             string YearofProduction = Console.ReadLine();
             int i = 0;
 
-            if (int.TryParse(YearofProduction, out i) && i > 1950 && i <= DateTime.Now.Year)
+            if (int.TryParse(YearofProduction, out i) && i > 1980 && i <= DateTime.Now.Year)
             {
                 auto.Rocznik = i;
                 flag2 = false;
@@ -111,7 +111,8 @@ class Program
         auto.AskForCentralLock();
         auto.Zamek = auto.ChecForAddons();
 
-        Console.WriteLine("Auto marki {0}, kolor lakieru {1}, samochód wyprodukowany w roku {2}, \nz przebiegiem {3}km, o pojemności silnika {4}. \n\nKlimatyzacja {5} \nElektryczne okna {6} \nRadio {7} \nCentraly zamek {8}", auto.Marka, auto.Lakier, auto.Rocznik, auto.Przebieg, auto.Silnik, auto.Klima ? "Tak" : "Nie", auto.Szyby ? "Tak" : "Nie", auto.Radio ? "Tak" : "Nie", auto.Zamek ? "Tak" : "Nie");
+    Console.WriteLine("Auto marki {0}, kolor lakieru {1}, samochód wyprodukowany w roku {2}, \nz przebiegiem {3}km, o pojemności silnika {4}. \n\nKlimatyzacja {5} \nElektryczne okna {6} \nRadio {7} \nCentraly zamek {8}", auto.Marka, auto.Lakier, auto.Rocznik, auto.Przebieg, auto.Silnik, auto.Klima ? "Tak" : "Nie", auto.Szyby ? "Tak" : "Nie", auto.Radio ? "Tak" : "Nie", auto.Zamek ? "Tak" : "Nie");
+        auto.CountPrice();
         Console.ReadKey();
     }
 }

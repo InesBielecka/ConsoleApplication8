@@ -113,5 +113,64 @@ namespace ConsoleApplication8
             } while (flag);
             return result;
         }
+        // Rocznik 1980-1990 - 4000, Rocznik 1991-2000 - 3000zł, Rocznik 2001-2007 - 2000zł, Rocznik 2008-2014 - 1000zł,
+        // Rocznik 2015 - 2017 + 1000
+        // Przebieg 0-30k -500, 30-100k -1000, >100k - 1500
+        // Klima tak + 1000
+        // Radio tak + 500
+        // Szyby tak + 500
+        // Zamek tak +500
+        public void CountPrice()
+        {
+            if (Rocznik > 1980 && Rocznik <= 1990)
+            {
+                _cena -= 4000;
+            }
+            if (Rocznik > 1990 && Rocznik <= 2000)
+            {
+                _cena -= 3000;
+            }
+            if (Rocznik > 2000 && Rocznik <= 2007)
+            {
+                _cena -= 2000;
+            }
+            if (Rocznik > 2007 && Rocznik <= 2014)
+            {
+                _cena -= 1000;
+            }
+            if (Rocznik > 2014)
+            {
+                _cena += 1000;
+            }
+            if (Przebieg > 0 && Przebieg <= 30000)
+            {
+                _cena -= 500;
+            }
+            if (Przebieg > 30000 && Przebieg <= 100000)
+            {
+                _cena -= 1000;
+            }
+            if (Przebieg > 100000)
+            {
+                _cena -= 1500;
+            }
+            if (Klima == true)
+            {
+                _cena += 1000;
+            }
+            if (Szyby == true)
+            {
+                _cena += 500;
+            }
+            if (Zamek == true)
+            {
+                _cena += 500;
+            }
+            if (Radio == true)
+            {
+                _cena += 500;
+            }
+            Console.WriteLine("Cena samochodu {0}", _cena);
+        }
     }
 }
